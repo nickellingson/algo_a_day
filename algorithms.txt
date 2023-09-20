@@ -1,0 +1,32 @@
+Notes:
+https://github.com/ThePrimeagen/kata-machine
+
+
+Algorithms:
+- Search
+    - Linear
+    - Binary
+- Sort
+    - Bubble Sort
+- Recursion
+    - Steps
+        - Base Case
+        - Recursion
+            - Pre Operation
+            - Recurse
+            - Post Operation
+- Quick Sort
+- Merge Sort
+
+
+
+Data Structures:
+- Array
+- Linked List
+- Doubly Linked List
+- ArrayList
+- RingBuffer
+- Queue
+- Stack
+- Trees
+-

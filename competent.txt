@@ -1,0 +1,21 @@
+Emphasize:
+Breadth First Search
+Depth First Search
+Binary Search
+Linked List
+Stack
+Maximum sub array
+
+Know:
+Linked List
+Stack
+Queue
+Binary Tree
+General Tree
+Depth First Search
+Breadth First Search
+Compare Two Trees
+Dijkstra's Algorithm
+Sorting Algorithms
+Binary Search
+Heap

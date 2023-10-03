@@ -31,4 +31,34 @@ class Stack:
 
 
     # Get the top item of the stack
-    def peek 
+    def peek(self):
+        if self.isEmpty():
+            raise Exception("Peeking from an empty stack")
+        return self.head.next.value
+    
+    # Push a value into the stack
+    def push(self, value):
+        node = Node(value)
+        node.next = self.head.next
+        self.head.next = node
+        self.size += 1
+
+    # Remove a value from the stack and return
+    def pop(self):
+        if self.isEmpty():
+            raise Exception("Popping from an empty stack")
+        remove = self.head.next
+        self.head.next = self.head.next.next
+        self.size -= 1
+        return remove.value
+    
+if __name__ == "__main__":
+    stack = Stack()
+    for i in range(1,11):
+        stack.push(i)
+    print(f"Stack: {stack}")
+
+    for _ in range(1,6):
+        remove = stack.pop()
+        print(f"Pop: {remove}")
+    print(f"Stack: {stack}")

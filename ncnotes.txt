@@ -1,0 +1,100 @@
+Top Interview Concepts
+
+Algorithms
+#1 HashMaps:
+Operations
+- search() -> O(1)
+- insert() -> O(1)
+- remove() -> O(1)
+Notes:
+Very common algorithm, every operation (most) can be done in (amortized) constant time O(1).
+
+#2 Recursion
+Notes: For trees, graphs, backtracking, dp, and more.
+Takes extra memory, and know call stack
+
+#3 DFS and BFS O(V+E)
+Notes:
+Able to be applied to trees and graphs
+
+#4 Binary Search O(logn)
+Notes:
+You get feedback when searching for target. Check if the value is greater or less than target
+and then search based on that information.
+
+#5 Sliding Window
+Notes:
+Problem is you need to iterate through an array n times, which is O(n^2).
+Use two pointers, to only iterate through array once.
+
+#6 Heaps
+Operations
+- top() -> O(1)
+- insert() -> O(logn)
+- remove() -> O(logn)
+- heapify() -> O(n)
+Notes:
+Min heap and max heap. When building with all values present O(n). 
+When building with data stream, not all values present, O(nlogn).
+
+Data structures
+Arrays
+- Operations
+-- Insert End -> O(1)
+-- Remove End -> O(1)
+-- Insert Middle -> O(n)
+-- Remove Middle -> O(n)
+Notes: Arrays are stored in a contiguous way. Stored in a subset of RAM or memory in order.
+Can access any element of the array in constant time as long as we know the index.
+
+Linked List
+- Operations
+-- Insert End -> O(1)
+-- Remove End -> O(1)
+-- Insert Middle -> O(1)
+-- Remove Middle -> O(1)
+Notes: Ordered list of element, but not contiguous in RAM. Uses pointers to connect elements.
+Cannot randomly access element later in the list.
+
+HashMaps
+- Operations
+-- Insert -> O(1)
+-- Remove -> O(1)
+-- Search -> O(1)
+Notes: Key value pairs, very effecient
+
+Queues
+- Operations
+-- Push Front -> O(1)
+-- Pop Front -> O(1)
+-- Push Back -> O(1)
+-- Pop Back -> O(1)
+Notes: First in last out, process a set of elements in the same order they are added
+
+Binary Tree
+- Operations
+-- Insert -> O(logn)
+-- Remove -> O(logn)
+-- Search -> O(logn)
+Notes: Tree map, binary search tree less to the left more to the right, ordered nodes
+
+Trie or Prefix Tree
+- Operations
+-- Insert -> O(n)
+-- Search -> O(n)
+Notes: Each node represents a character and can have up to 26 children
+
+Heaps
+- Operations
+-- Insert -> O(logn)
+-- Pop -> O(logn)
+-- Min/Max -> O(1)
+Notes: Min heap or max heap, min or max value will be the root of the tree.
+Complete tree, while visualized as trees, usually arrays under the hood.
+Left child = 2 * i
+Right child = 2 * i + 1
+
+Graphs
+Notes: Node with edges that connect the nodes together.
+General graph have less restrictions than structures like trees
+Can be represented by an adjacency list

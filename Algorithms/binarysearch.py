@@ -27,8 +27,22 @@ def recursive_binary_search(arr, low, high, x):
     
 
 # ITERATIVE
-def iterative_binary_search(arr, low, high, x):
-    pass
+def iterative_binary_search(arr, x):
+    low = 0
+    high = arr.length-1
+    middle = 0
+
+    while low <= high:
+        middle = (high+low)//2
+        if arr[middle] == x:
+            return middle
+        elif arr[middle] > x:
+            high = middle - 1
+        else:
+            low = middle + 1
+
+    return -1
+
 
 # Test array
 arr = [ 2, 3, 4, 10, 40 ]

@@ -29,7 +29,7 @@ def recursive_binary_search(arr, low, high, x):
 # ITERATIVE
 def iterative_binary_search(arr, x):
     low = 0
-    high = arr.length-1
+    high = len(arr)-1
     middle = 0
 
     while low <= high:
@@ -52,6 +52,10 @@ x = 10
 result = recursive_binary_search(arr, 0, len(arr)-1, x)
  
 if result != -1:
-    print("Element is present at index", str(result))
+    print("Recursive: Element is present at index", str(result))
 else:
     print("Element is not present in array")
+
+result1 = iterative_binary_search(arr, x)
+
+print("Iterative: Element is present at index", result)

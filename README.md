@@ -11,3 +11,6 @@
 
 #### 4/27
 ##### Reorder List
+
+#### 4/28
+##### Remove nth node on end of list

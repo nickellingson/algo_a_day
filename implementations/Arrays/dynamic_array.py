@@ -47,3 +47,5 @@ class Array:
 # Create object instance
 a = Array()
 print(a.arr)
+a.pushback(5)
+print(a.arr)

@@ -1,6 +1,6 @@
 from collections import deque
 
-class TreeNode():
+class TreeNode:
 
     def __init__(self, val):
         self.val = val
@@ -8,7 +8,7 @@ class TreeNode():
         self.left = None
 
 
-class Tree():
+class Tree:
 
     def __init__(self):
         self.root = TreeNode(10)

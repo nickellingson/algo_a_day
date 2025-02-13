@@ -26,6 +26,7 @@ def bfs(grid):
                     (r + dr, c + dc) in visit or # already visited
                     grid[r + dr][c + dc] == 1): # blocked (value 1)
                     continue
+                # add to queue and visited if it doesn't hit any of the cases above
                 queue.append((r + dr, c + dc))
                 visit.add((r + dr, c + dc))
         length += 1

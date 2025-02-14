@@ -8,6 +8,11 @@ sets = {1, 2, 3}
 # accessing, slicing, lookups, updates, set operations (union, intersection, difference)
 # loops, list comprehensions, lambda, map, filter, functools.reduce()
 
+
+# list comprehension
+arr = [[0] * 4 for i in range(4)] # 4 X 4 list
+
+
 # ALGORITHMS
 # sorting, searching, recursion
 # array and hashmap, linked list, merge sort, binary search, tree bfs and dfs, recursion

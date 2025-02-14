@@ -14,7 +14,7 @@ edges = [["A", "B"], ["B", "C"], ["B", "E"], ["C", "E"], ["E", "D"]]
 
 adjList = {}
 
-for src, dst in edges: 
+for src, dst in edges:
     if src not in adjList:
         adjList[src] = []
     if dst not in adjList:
@@ -24,7 +24,7 @@ for src, dst in edges:
 print(adjList)
 
 
-# dfs
+# dfs, O(V ^ N) N = Average number of edges
 def dfs(node, target, adjList, visit):
     if node in visit:
         return 0
@@ -41,7 +41,7 @@ def dfs(node, target, adjList, visit):
 
 print(dfs("A", "E", adjList, set()))
 
-# bfs
+# bfs, O(V + E)
 def bfs(node, target, adjList):
     length = 0
     visit = set()

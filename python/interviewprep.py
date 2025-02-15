@@ -6,12 +6,32 @@ dict = {"a": 1, "b": 2}
 sets = {1, 2, 3}
 
 # accessing, slicing, lookups, updates, set operations (union, intersection, difference)
-# loops, list comprehensions, lambda, map, filter, functools.reduce()
+# loops, list comprehensions, lambda, map, filter, functools.reduce(), generator
 
+# decorator
+# to modify a function implementation behavior without changing the underlying source code by wrapping the function
+# for logging, access control, memoization, and more
+def decorator_logger_function(func):
+    def wrapper():
+        print("hi from wrapper, running function (before)")
+        func()
+        print("hi from wrapper, function done (after)")
+    return wrapper
+
+@decorator_logger_function
+def test_function():
+    print("hello from function")
+
+test_function()
+
+# strings tuples are immutable
+# fstring
+fstring = f"the = {5 == 4}"
+print(fstring)
 
 # list comprehension
 arr = [[0] * 4 for i in range(4)] # 4 X 4 list
-
+print(arr)
 
 # ALGORITHMS
 # sorting, searching, recursion
@@ -51,3 +71,15 @@ class TestAddFunctions(unittest.TestCase):
 # if __name__=="__main__":
     # unittest.main()
 
+global x
+# test global and nonlocal
+def outer_function():
+    x = 5
+    def inner_function(x):
+        nonlocal x
+        x += 5
+
+    inner_function(x)
+    print(x)
+
+outer_function()

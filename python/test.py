@@ -5,3 +5,7 @@
 # write a decorator
 
 # write a simple function and test
+
+# multiple files with importing. import other modules
+
+# facade pattern

@@ -71,15 +71,108 @@ class TestAddFunctions(unittest.TestCase):
 # if __name__=="__main__":
     # unittest.main()
 
-global x
+
 # test global and nonlocal
 def outer_function():
     x = 5
-    def inner_function(x):
+    def inner_function():
         nonlocal x
         x += 5
 
-    inner_function(x)
+    inner_function()
     print(x)
 
 outer_function()
+
+# module contains functions, classes, and variables
+# usually a single file
+
+# packages contain multiple modules, subpackages, and maybe __init__.py
+'''
+my_package/
+├── __init__.py
+├── module_a.py
+├── module_b.py
+└── subpackage/
+    ├── __init__.py
+    └── module_c.py
+
+import my_package
+from my_package import module_a
+from my_package.subpackage import module_c
+'''
+
+# variables and naming convention
+# single leading underscore prefix is used for internal use within a module
+_for_internal_use = 1
+
+# keyword already take
+class_ = "class"
+
+# avoid attribute collisions in subclassing
+__var = "var"
+
+# dunder or magic method, python interals or special protocol
+# __init__ -> constructor
+# __str__ -> to string method
+# __main__
+# __name__ module attribute
+
+# code won't execute unless ran directly
+# if __name__ == "__main__":
+# python filename.py
+# keeps library code (functions, classes, etc.) seperate from script-running code
+
+# self is the current instance
+
+# @staticmethod = normal function does not receive automatice references like self (helper functions)
+# @classmethod = bound to class, receives cls (class itself not instance)
+'''
+@classmethod
+def from_string(cls, data_str):
+    # Parse data_str and create an instance
+    return cls(...)
+'''
+
+
+# Namespaces
+# mapping from name (identifiers) to objects
+# like a dictionary that keeps track of which name points to which object
+# len(), print(), Exception
+x = 50  # Global namespace
+
+def outer():
+    x = 25  # Enclosing (outer) scope
+
+    def inner():
+        x = 10  # Local (inner) scope
+        print("inner x =", x)
+    inner()
+    print("outer x =", x)
+
+outer()
+print("global x =", x)
+
+# MRO = Method Resolution Order
+# order in which Python looks up methods and attributes on a class and its parent classes (i.e. superclasses)
+# c3 linearization algorithm, create a single linearized order for searching parents attributes
+# MyClass.__mro__
+
+
+# inheritance
+class A:
+    def greet(self):
+        print("Hello from A")
+
+class B(A):
+    def greet(self):
+        print("Hello from B")
+
+class C(A):
+    def greet(self):
+        print("Hello from C")
+class D(B, C):
+    pass
+d = D()
+d.greet()
+print(D.mro())

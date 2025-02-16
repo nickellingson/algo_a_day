@@ -8,6 +8,42 @@ sets = {1, 2, 3}
 # accessing, slicing, lookups, updates, set operations (union, intersection, difference)
 # loops, list comprehensions, lambda, map, filter, functools.reduce(), generator
 
+l = [1,2,3]
+def mult(n):
+    return n * 3
+new_l = map(mult, l)
+print(list(new_l))
+
+
+subtract = lambda z, j : z - j
+print(subtract(3, 1))
+
+add = lambda x, y: x + y
+print(add(5, 3))
+
+import functools
+
+def mult2(n, acc):
+    return n * acc
+
+reduce_list = [1, 2, 3 ,4, 5, 6, 7]
+red = functools.reduce(mult2, reduce_list)
+print("reduce ", red)
+
+# implement reduce
+# takes in function and list
+
+impl_reduce_list = [1, 2, 3, 4, 5, 6, 7]
+
+def impl_reduce(fn, list):
+    res = 1
+    for i in list:
+        res = fn(i, res)
+    return res   
+
+print("impl reduce", impl_reduce(mult2, impl_reduce_list))
+
+
 # generator
 def my_generator(n):
     for i in range(n):
@@ -18,6 +54,14 @@ print(_generator) # generator object
 
 for value in _generator:
     print(value)
+
+# another generator
+def gen(n):
+    for i in range(n):
+        yield(i)
+g = gen(5)
+for i in g:
+    print(i)
 
 # numpy
 import numpy as np

@@ -8,6 +8,39 @@ sets = {1, 2, 3}
 # accessing, slicing, lookups, updates, set operations (union, intersection, difference)
 # loops, list comprehensions, lambda, map, filter, functools.reduce(), generator
 
+# generator
+def my_generator(n):
+    for i in range(n):
+        yield i
+
+_generator = my_generator(3)
+print(_generator) # generator object
+
+for value in _generator:
+    print(value)
+
+# numpy
+import numpy as np
+
+# Create a 1D NumPy array of floats
+arr = np.array([1.0, 2.0, 3.5, 4.2])
+print(arr)               # [1.  2.  3.5 4.2]
+print(arr.dtype)         # float64 (depending on your system)
+print(arr.shape)         # (4,)  -> 1D array of length 4
+
+# Vectorized operation (element-wise multiplication by 2)
+arr2 = arr * 2
+print(arr2)              # [2.  4.  7.  8.4]
+# vs normal array
+narray = [1,2,3]
+print(narray * 2)        # [1, 2, 3, 1, 2, 3]
+
+# In-place addition
+arr += 10
+print(arr)               # [11. 12. 13.5 14.2]
+
+
+
 # decorator
 # to modify a function implementation behavior without changing the underlying source code by wrapping the function
 # for logging, access control, memoization, and more
@@ -36,7 +69,7 @@ print(arr)
 # ALGORITHMS
 # sorting, searching, recursion
 # array and hashmap, linked list, merge sort, binary search, tree bfs and dfs, recursion
-# map bfs (adjacency list)
+
 
 # FILE HANDLING
 # with open, writing, parsing csv, and json
@@ -49,6 +82,24 @@ except ZeroDivisionError:
     print("Cannot divide by zero!")
 finally:
     print("This will always execute")
+
+
+try:
+    print(" do something, success")
+except NameError:
+    print(NameError, "error")
+except:
+    "other error"
+else:
+    "if good to go and no error, this will run"
+
+x = 5
+if x < 0:
+    raise Exception("error x < 0")
+
+if not type(x) is int:
+    raise TypeError("only integers allowed")
+
 
 # LIBRARIES
 # numpy and pandas
@@ -159,7 +210,7 @@ print("global x =", x)
 # MyClass.__mro__
 
 
-# inheritance
+# inheritance, super, and mro
 class A:
     def greet(self):
         print("Hello from A")
@@ -167,12 +218,29 @@ class A:
 class B(A):
     def greet(self):
         print("Hello from B")
+        super().greet() # call next in MRO line, parent
 
-class C(A):
-    def greet(self):
-        print("Hello from C")
-class D(B, C):
+# class C(A):
+#     def greet(self):
+#         print("Hello from C")
+class D(B):
     pass
 d = D()
 d.greet()
 print(D.mro())
+
+# python garbage collection
+# uses reference counting, tracks how many references (variables, data structures, etc) are pointing to it
+def create_list():
+    x = [1, 2, 3]
+    return x
+
+lst = create_list()  # Reference count for [1, 2, 3] is at least 1
+lst = None           # Reference count goes to 0, memory can be freed
+
+# cyclical garbage collection, scans to find cycle and no external references
+# a.ref = b
+# b.ref = a
+
+# generation, how long an object has survived garbage collections
+

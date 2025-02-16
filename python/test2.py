@@ -17,6 +17,13 @@ print(lookup_key({"hello":1, "hi": 2}, "hello"))
 # Algorithms
 # 1
 def merge_sort(lst, s, e):
+# base case e - s + 1 equal to or less than 0, return list
+# call sort on split lists
+# merge on both lists
+# return list
+# copy lists and then while loop, check value and merge
+# two more while loops to clean up the non empty one
+
     if e - s + 1 <= 1:
         return lst
     
